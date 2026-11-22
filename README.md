@@ -1,5 +1,7 @@
 # Dashboard Cuaca
 
+**Demo live:** [dashboard-cuaca di GitHub Pages](https://kirax-12.github.io/dashboard-cuaca/)
+
 Dashboard cuaca real-time untuk kota mana pun di dunia, dibuat oleh [Remike Dev](https://github.com/kirax-12).
 
 Menggunakan [Open-Meteo](https://open-meteo.com) — API cuaca gratis yang tidak memerlukan API key dan tidak perlu backend.
