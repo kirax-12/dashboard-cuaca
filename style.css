@@ -1,0 +1,156 @@
+/* Dashboard Cuaca — neo-brutalist cream style.
+   Design system saved in ~/workspace/custom-skills/remike-web-style/ */
+
+:root {
+  --bg: #fff8ec;
+  --ink: #111111;
+  --surface: #ffffff;
+  --yellow: #ffd23f;
+  --pink: #ff90e8;
+  --blue: #7ab8ff;
+  --green: #4ade80;
+  --muted: #55534e;
+  --border: 2px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+a { color: var(--ink); font-weight: 700; }
+:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.app-header, main, .app-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-header { padding-top: 46px; }
+.app-header h1 {
+  margin: 0 0 4px;
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.app-sub {
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  color: var(--muted);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin: 0;
+}
+
+.search-panel {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin: 28px 0 8px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 220px; }
+label { font-weight: 700; font-size: 0.92rem; }
+input {
+  background: var(--bg);
+  border: var(--border);
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 11px 12px;
+  font: inherit;
+  min-height: 50px;
+  width: 100%;
+}
+.btn-search {
+  background: var(--blue);
+  color: var(--ink);
+  border: var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  padding: 13px 22px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 52px;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn-search:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+
+.status { min-height: 1.6em; color: var(--muted); font-weight: 600; }
+
+.current-card {
+  background: var(--blue);
+  border: var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+.current-city { font-family: "Space Mono", ui-monospace, monospace; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; margin: 0; }
+.current-temp { font-size: clamp(3.4rem, 9vw, 5.2rem); font-weight: 700; line-height: 1; letter-spacing: -0.03em; margin: 8px 0 4px; }
+.current-desc { font-size: 1.25rem; font-weight: 700; margin: 0; }
+.current-details { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0; align-content: start; }
+.current-details div { background: var(--surface); border: var(--border); border-radius: 12px; padding: 12px 14px; }
+.current-details dt { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+.current-details dd { margin: 3px 0 0; font-weight: 700; font-size: 1.05rem; overflow-wrap: anywhere; }
+
+.forecast-section h2 { font-size: 1.8rem; letter-spacing: -0.02em; margin: 0; }
+.section-sub {
+  font-family: "Caveat", cursive;
+  font-size: 1.45rem;
+  color: var(--muted);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin: 0 0 18px 4px;
+}
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 14px;
+}
+.forecast-card {
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+  text-align: center;
+}
+.forecast-card:nth-child(odd) { transform: rotate(-0.6deg); }
+.forecast-card:nth-child(even) { transform: rotate(0.6deg); }
+.forecast-today { background: var(--yellow); }
+.fc-day { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.75rem; font-weight: 700; margin: 0; }
+.fc-symbol { font-size: 1.9rem; margin: 6px 0 2px; }
+.fc-desc { font-weight: 700; font-size: 0.9rem; margin: 0; min-height: 2.4em; }
+.fc-temp { font-weight: 700; margin: 4px 0 0; }
+.fc-rain { color: var(--muted); font-size: 0.8rem; margin: 2px 0 0; min-height: 1.2em; }
+
+.app-footer { padding-top: 30px; padding-bottom: 38px; color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  .current-card { grid-template-columns: 1fr; }
+  .btn-search { width: 100%; }
+}

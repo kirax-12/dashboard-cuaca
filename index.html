@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Cuaca — Remike Dev</title>
+<meta name="description" content="Dashboard cuaca real-time untuk kota mana pun di dunia: suhu saat ini, kelembapan, angin, dan prakiraan 7 hari. Data dari Open-Meteo, tanpa API key.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-header">
+  <h1>Dashboard Cuaca</h1>
+  <p class="app-sub">cuaca kota mana pun, langsung dari data Open-Meteo ↓</p>
+</header>
+
+<main>
+  <form id="search-form" class="search-panel">
+    <div class="field">
+      <label for="city-input">Nama kota</label>
+      <input id="city-input" type="text" placeholder="cth. Jakarta, Bandung, Tokyo" autocomplete="off" required>
+    </div>
+    <button class="btn-search" type="submit">Cek Cuaca →</button>
+  </form>
+
+  <p class="status" id="status" role="status"></p>
+
+  <section class="current-card" id="current-card" hidden>
+    <div class="current-main">
+      <p class="current-city" id="current-city">—</p>
+      <p class="current-temp"><span id="current-temp">–</span>°C</p>
+      <p class="current-desc" id="current-desc">—</p>
+    </div>
+    <dl class="current-details">
+      <div><dt>Terasa seperti</dt><dd id="detail-feels">–</dd></div>
+      <div><dt>Kelembapan</dt><dd id="detail-humidity">–</dd></div>
+      <div><dt>Angin</dt><dd id="detail-wind">–</dd></div>
+      <div><dt>Zona waktu</dt><dd id="detail-tz">–</dd></div>
+    </dl>
+  </section>
+
+  <section class="forecast-section" id="forecast-section" hidden>
+    <h2>Prakiraan 7 hari</h2>
+    <p class="section-sub">seminggu ke depan, santai aja ↓</p>
+    <div class="forecast-grid" id="forecast-grid"></div>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <p>Dibuat oleh <a href="https://github.com/kirax-12" target="_blank" rel="noopener">Remike Dev</a> · Data cuaca: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (gratis, tanpa API key)</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
